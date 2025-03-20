@@ -1,0 +1,92 @@
+.modal-main {
+    overflow: hidden;
+    position: relative;
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-main__top {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    @include phone {
+        gap: 16px;
+    }
+}
+
+.modal-main__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.4;
+
+    color: $black;
+
+    @include phone {
+        font-size: 18px;
+        line-height: 1.33;
+    }
+}
+
+.modal-main__description {
+    font-size: $base-font-size;
+    line-height: 1.7;
+
+    color: $grey;
+
+    @include phone {
+        font-size: $sm-font-size;
+        line-height: 1.33;
+    }
+}
+
+.modal-main__form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modal-main__form-fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.modal-main__form-calc {
+    font-size: 14px;
+    line-height: 1.7;
+
+    @include phone {
+        margin-bottom: 8px;
+    }
+}
+
+.modal-main__form-result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.modal-main__form-result-count {
+    font-size: 24px;
+    line-height: 1;
+
+    @include phone {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+}
+
+.modal-main__submit {
+    margin-top: 32px;
+
+    @include tablet-sm {
+        margin-top: auto;
+    }
+}

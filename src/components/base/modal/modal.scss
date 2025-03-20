@@ -1,0 +1,107 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+
+  min-width: 100vw;
+  min-height: 100vh;
+
+  transition: opacity $base-transition, visibility $base-transition;
+
+  &._opened {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.modal__inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 552px;
+  padding: 32px;
+  
+  border-radius: 30px;
+  background: $white;
+
+  box-sizing: border-box;
+
+  @include tablet-sm {
+    max-width: 452px;
+  }
+
+  @include phone {
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    padding: 32px 16px 16px;
+
+    border-radius: 0;
+  }
+}
+
+.modal__close {
+  @include button-reset;
+
+  position: absolute;
+  z-index: 10;
+
+  right: 16px;
+  top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  color: $accent;
+
+  transition: $base-transition;
+
+  @include tablet-sm {
+    right: 12px;
+  }
+  
+  @include phone {
+    right: 16px;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    color: #F53A31;
+  }
+
+  &:active {
+    color: $accent;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+
+    @include phone {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.modal__overlay {
+  background-color: rgba(#454545, 0.64);
+  position: fixed;
+  z-index: -1;
+  height: 100vh;
+  inset: 0;
+}

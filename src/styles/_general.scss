@@ -1,0 +1,65 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "mixins" as *;
+
+html,
+body {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  font-family: $font-family;
+  color: $black;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @include no-scrollbar;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  @include no-scrollbar;
+
+  background: linear-gradient(0deg, #ff5e56, #ff5e56),
+    linear-gradient(255.35deg, #dc3131 0.83%, rgba(255, 79, 79, 0) 108.93%);
+
+  *._hidden {
+    display: none;
+  }
+
+  *._disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &:has(.modal._opened) {
+    overflow: hidden;
+  }
+}
+
+#root {
+  display: flex;
+
+  width: 100%;
+}
+
+p {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  white-space: nowrap;
+  border: 0;
+}
