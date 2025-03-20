@@ -6,6 +6,7 @@ import createSvgSpritePlugin from 'vite-plugin-svg-spriter';
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/credit-settlement/',
   plugins: [
     react(),
     createSvgSpritePlugin({
